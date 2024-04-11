@@ -1,0 +1,92 @@
+<div class="center-container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div class="example-header-image">
+        <img src="assets/user_icon.png" alt="user-icon" />
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group
+        dynamicHeight
+        mat-stretch-tabs="false"
+        mat-align-tabs="start"
+      >
+        <mat-tab label="Login">
+          <form
+            class="example-form"
+            [formGroup]="loginForm"
+            (ngSubmit)="submit()"
+            submitted="true"
+          >
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                type="email"
+                placeholder="johndoe@email.com"
+                formControlName="email"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+            <button
+              mat-flat-button
+              color="primary"
+              [disabled]="!loginForm.valid"
+            >
+              Login
+            </button>
+          </form>
+        </mat-tab>
+        <mat-tab label="Sign Up">
+          <form
+            class="example-form"
+            [formGroup]="signupForm"
+            (ngSubmit)="signup()"
+            submitted="true"
+          >
+            <mat-form-field class="example-full-width">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="John Doe" formControlName="name" />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                type="email"
+                placeholder="johndoe@email.com"
+                formControlName="email"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Confirm your Password</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="passwordConfirm"
+              />
+            </mat-form-field>
+
+            <button
+              mat-flat-button
+              color="primary"
+              [disabled]="!signupForm.valid"
+            >
+              SignUp
+            </button>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
